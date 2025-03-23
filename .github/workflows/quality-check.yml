@@ -13,5 +13,5 @@ jobs:
         run: make install
       - name: check
         run: |
-          make check || echo 'NOT OK'
+          make check &&
           make lint
