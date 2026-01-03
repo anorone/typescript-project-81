@@ -5,22 +5,20 @@ import Tag from './Tag';
 const getLabelTag = (value: string, attributes: Dictionary): Tag =>
   new Tag('label', { ...attributes }, value);
 
-const getInputTag = ({ id, name, value, ...attributes }: Dictionary): Tag =>
+const getInputTag = ({ name, value, ...attributes }: Dictionary): Tag =>
   new Tag('input', {
-    id,
     name,
     type: 'text',
     value,
     ...attributes,
   });
 
-const getTextareaTag = ({ id, name, value, ...attributes }: Dictionary): Tag =>
+const getTextareaTag = ({ name, value, ...attributes }: Dictionary): Tag =>
   new Tag(
     'textarea',
     {
       cols: 20,
       rows: 40,
-      id,
       name,
       ...attributes,
     },
@@ -53,7 +51,6 @@ class FormFieldsBuilder<T extends FormTemplate> {
       ...restAttributes
     }: FormFieldAttributes = attributes;
     const textField = tags[as]({
-      id: name,
       name,
       value,
       ...restAttributes,
