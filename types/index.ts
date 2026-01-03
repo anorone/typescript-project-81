@@ -10,8 +10,8 @@ export type FormFieldAttributes = Dictionary & {
 
 type EncriptionTypes
   = 'application/x-www-form-urlencoded'
-  | 'multipart/form-data'
-  | 'text/plain'
+    | 'multipart/form-data'
+    | 'text/plain'
 
 type FormTargets = '_self' | '_blank' | '_parent' | '_top'
 

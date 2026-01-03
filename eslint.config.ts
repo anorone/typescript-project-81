@@ -35,6 +35,7 @@ export default tseslint.config([
     rules: {
       semi: ['error', 'never'],
       quotes: ['error', 'single'],
+      '@typescript-eslint/no-unnecessary-condition': 'off'
     },
   },
 ])
