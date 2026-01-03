@@ -8,8 +8,8 @@ export type FormFieldAttributes = Dictionary & {
   labelHtml?: Dictionary
 }
 
-type EncriptionTypes =
-  | 'application/x-www-form-urlencoded'
+type EncriptionTypes
+  = 'application/x-www-form-urlencoded'
   | 'multipart/form-data'
   | 'text/plain'
 
