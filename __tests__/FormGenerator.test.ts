@@ -1,3 +1,4 @@
+import { test, expect, vi } from 'vitest';
 import { readFixture, formatHtml } from '../utils';
 import FormGenerator from '../src/FormGenerator';
 
