@@ -13,7 +13,7 @@ class HtmlFormatter {
 
   private formatChildren(children: TagChildren): string {
     const result = Array.isArray(children)
-      ? children.map((child) => this.format(child)).join('')
+      ? children.map(child => this.format(child)).join('')
       : typeof children === 'string'
         ? children
         : this.format(children)
