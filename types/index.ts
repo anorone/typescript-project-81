@@ -4,6 +4,8 @@ export type FormTemplate = Record<string, string | number>;
 
 export type FormFieldAttributes = Dictionary & {
   as?: 'input' | 'textarea';
+  label?: string;
+  labelHtml?: Dictionary;
 };
 
 type EncriptionTypes =

@@ -48,6 +48,8 @@ class FormFieldsBuilder<T extends FormTemplate> {
     const {
       as = 'input',
       value = this.template[name],
+      label,
+      labelHtml,
       ...restAttributes
     }: FormFieldAttributes = attributes;
     const textField = tags[as]({
@@ -55,8 +57,9 @@ class FormFieldsBuilder<T extends FormTemplate> {
       value,
       ...restAttributes,
     });
-    const labelTag = getLabelTag(capitalize(name), {
+    const labelTag = getLabelTag(label ?? capitalize(name), {
       for: name,
+      ...labelHtml,
     });
     this.state = [...this.state, labelTag, textField];
   }
