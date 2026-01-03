@@ -1,5 +1,5 @@
-import { readFixture, formatHtml } from '@/utils';
-import FormGenerator from '@/FormGenerator';
+import { readFixture, formatHtml } from '../utils';
+import FormGenerator from '../src/FormGenerator';
 
 test('form generation', async () => {
   const template = { name: 'anna', job: 'nurse', gender: 'f' };

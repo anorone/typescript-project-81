@@ -1,4 +1,4 @@
-import { FormTemplate, FormAttributes, FormGeneratorConfig } from '@/types';
+import { FormTemplate, FormAttributes, FormGeneratorConfig } from '../types';
 import getFormatter from './formatters';
 import { Tag, FormFieldsBuilder } from './lib';
 

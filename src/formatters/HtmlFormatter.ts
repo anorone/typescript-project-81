@@ -1,5 +1,5 @@
-import { Dictionary } from '@/types';
-import { Tag, TagChildren } from '@/lib';
+import { Dictionary } from '../../types';
+import { Tag, TagChildren } from '../lib';
 
 class HtmlFormatter {
   private formatAttributes(attributes: Dictionary): string {

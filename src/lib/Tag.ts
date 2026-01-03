@@ -1,4 +1,4 @@
-import { Dictionary } from '@/types';
+import { Dictionary } from '../../types';
 
 type TagChildren = Tag | Tag[] | string;
 

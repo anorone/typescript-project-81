@@ -1,5 +1,5 @@
-import { FormTemplate, FormFieldAttributes, Dictionary } from '@/types';
-import { capitalize } from '@/utils';
+import { FormTemplate, FormFieldAttributes, Dictionary } from '../../types';
+import { capitalize } from '../../utils';
 import Tag from './Tag';
 
 const getLabelTag = (value: string, attributes: Dictionary): Tag =>
