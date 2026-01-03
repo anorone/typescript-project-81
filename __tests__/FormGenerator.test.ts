@@ -48,5 +48,5 @@ test('accessing non-existent template property', () => {
 test('empty form generation', () => {
   const template = { name: 'bob', job: 'doctor', gender: 'm' };
   const form = FormGenerator.formFor(template, {}, vi.fn());
-  expect(form).toBe('<form action="#" method="post"></form>');
+  expect(form).toBe('<form method="post" action="#"></form>');
 });

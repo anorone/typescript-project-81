@@ -19,7 +19,7 @@ class FormGenerator<T extends FormTemplate> {
     buildFormFields(builder);
     const formTag = new Tag(
       'form',
-      { action: url, method, ...restAttributes },
+      { method, action: url, ...restAttributes },
       builder.getState()
     );
     return formTag;
