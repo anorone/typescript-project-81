@@ -1,6 +1,6 @@
 import { Dictionary } from '../../types'
 
-type TagChildren = Tag | Tag[] | string;
+type TagChildren = Tag | Tag[] | string
 
 const singleTagNames = [
   'area',
