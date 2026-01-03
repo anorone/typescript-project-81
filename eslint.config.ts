@@ -36,6 +36,13 @@ export default tseslint.config([
       'semi': ['error', 'never'],
       'quotes': ['error', 'single'],
       'quote-props': ['error', 'consistent'],
+      'arrow-parens': [
+        'error',
+        'as-needed',
+        {
+          requireForBlockBody: true,
+        },
+      ],
       '@typescript-eslint/no-unnecessary-condition': 'off',
     },
   },

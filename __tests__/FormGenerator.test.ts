@@ -4,7 +4,7 @@ import FormGenerator from '../src/FormGenerator'
 
 test('form generation', async () => {
   const template = { name: 'anna', job: 'nurse', gender: 'f' }
-  const form = FormGenerator.formFor(template, { method: 'post' }, f => {
+  const form = FormGenerator.formFor(template, { method: 'post' }, (f) => {
     f.input('name')
     f.input('job', { as: 'textarea' })
     f.submit()
@@ -15,7 +15,7 @@ test('form generation', async () => {
 
 test('specifying additional tag attributes', async () => {
   const template = { name: 'anna', job: 'nurse', gender: 'f' }
-  const form = FormGenerator.formFor(template, {}, f => {
+  const form = FormGenerator.formFor(template, {}, (f) => {
     f.input('name', { class: 'user-input', readonly: true })
     f.input('job')
   })
@@ -25,7 +25,7 @@ test('specifying additional tag attributes', async () => {
 
 test('overriding default attribute values', async () => {
   const template = { name: 'anna', job: 'nurse', gender: 'f' }
-  const form = FormGenerator.formFor(template, { url: '#' }, f => {
+  const form = FormGenerator.formFor(template, { url: '#' }, (f) => {
     f.input('name', { type: 'hidden' })
     f.input('job', { as: 'textarea', rows: 50, cols: 50, minlength: 5 })
     f.submit('Send')
@@ -37,7 +37,7 @@ test('overriding default attribute values', async () => {
 test('accessing non-existent template property', () => {
   const template = { name: 'bob', job: 'doctor', gender: 'm' }
   const getForm = () =>
-    FormGenerator.formFor(template, {}, f => {
+    FormGenerator.formFor(template, {}, (f) => {
       f.input('name')
       // @ts-expect-error: check accessing non-existent template property
       f.input('age')
