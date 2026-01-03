@@ -5,12 +5,13 @@ const config = {
   printWidth: 85,
   tabWidth: 2,
   useTabs: false,
-  semi: true,
+  semi: false,
   singleQuote: true,
-  trailingComma: 'es5',
+  trailingComma: 'all',
   bracketSpacing: true,
-  arrowParens: 'always',
+  arrowParens: 'avoid',
   endOfLine: 'lf',
+  quoteProps: 'consistent',
 }
 
 export default config

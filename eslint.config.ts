@@ -33,9 +33,10 @@ export default tseslint.config([
   eslintConfigPrettier,
   {
     rules: {
-      semi: ['error', 'never'],
-      quotes: ['error', 'single'],
-      '@typescript-eslint/no-unnecessary-condition': 'off'
+      'semi': ['error', 'never'],
+      'quotes': ['error', 'single'],
+      'quote-props': ['error', 'consistent'],
+      '@typescript-eslint/no-unnecessary-condition': 'off',
     },
   },
 ])

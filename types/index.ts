@@ -8,6 +8,7 @@ export type FormFieldAttributes = Dictionary & {
   labelHtml?: Dictionary
 }
 
+// prettier-ignore
 type EncriptionTypes
   = 'application/x-www-form-urlencoded'
     | 'multipart/form-data'

@@ -30,21 +30,21 @@ $ npm link @hexlet/code
 ## Example
 
 ```javascript
-import FormGenerator from '@hexlet/code';
+import FormGenerator from '@hexlet/code'
 
 const template = {
   name: 'anna',
   job: 'nurse',
   gender: 'f',
-};
+}
 
-const form = FormGenerator.formFor(template, { method: 'post' }, (f) => {
-  f.input('name');
-  f.input('job', { as: 'textarea' });
-  f.submit();
-});
+const form = FormGenerator.formFor(template, { method: 'post' }, f => {
+  f.input('name')
+  f.input('job', { as: 'textarea' })
+  f.submit()
+})
 
-console.log(form);
+console.log(form)
 
 //  <form action="#" method="post">
 //    <label for="name">Name</label>
