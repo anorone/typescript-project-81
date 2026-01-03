@@ -12,7 +12,7 @@ class FormGenerator<T extends FormTemplate> {
   private static getFormTag<T extends FormTemplate>(
     template: T,
     attributes: FormAttributes,
-    buildFormFields: (builder: FormFieldsBuilder<T>) => void
+    buildFormFields: (builder: FormFieldsBuilder<T>) => void,
   ): Tag {
     const { url = '#', method = 'post', ...restAttributes } = attributes
     const { builder } = new FormGenerator(template)
@@ -20,7 +20,7 @@ class FormGenerator<T extends FormTemplate> {
     const formTag = new Tag(
       'form',
       { method, action: url, ...restAttributes },
-      builder.getState()
+      builder.getState(),
     )
     return formTag
   }
@@ -29,7 +29,7 @@ class FormGenerator<T extends FormTemplate> {
     template: T,
     attributes: FormAttributes,
     buildFormFields: (builder: FormFieldsBuilder<T>) => void,
-    config: FormGeneratorConfig = {}
+    config: FormGeneratorConfig = {},
   ): string {
     const { format = 'html' } = config
     const formatter = getFormatter(format)

@@ -22,7 +22,7 @@ const getTextareaTag = ({ name, value, ...attributes }: Dictionary): Tag =>
       name,
       ...attributes,
     },
-    value.toString()
+    value.toString(),
   )
 
 const tags = {
@@ -33,7 +33,7 @@ const tags = {
 class FormFieldsBuilder<T extends FormTemplate> {
   constructor(
     private template: T,
-    private state: Tag[] = []
+    private state: Tag[] = [],
   ) {}
 
   public getState() {

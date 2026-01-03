@@ -8,7 +8,7 @@ const getFixturePath = (fixtureName: string): string => {
 
 const readFixture = async (
   fixtureName: string,
-  encoding: BufferEncoding = 'utf-8'
+  encoding: BufferEncoding = 'utf-8',
 ): Promise<string> => {
   const fixturePath = getFixturePath(fixtureName)
   const contents = await fs.readFile(fixturePath, { encoding })

@@ -5,7 +5,7 @@ class HtmlFormatter {
   private formatAttributes(attributes: Dictionary): string {
     const result = Object.entries(attributes)
       .map(([key, value]) =>
-        value === true ? ` ${key}` : ` ${key}="${value.toString()}"`
+        value === true ? ` ${key}` : ` ${key}="${value.toString()}"`,
       )
       .join('')
     return result

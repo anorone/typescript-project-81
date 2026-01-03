@@ -23,7 +23,7 @@ class Tag {
   constructor(
     private name: string,
     private attributes: Dictionary = {},
-    private children: TagChildren = ''
+    private children: TagChildren = '',
   ) {}
 
   public getName(): string {
