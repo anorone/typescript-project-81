@@ -1,5 +1,5 @@
-import { defineConfig } from 'vitest/config';
-import path from 'node:path/posix';
+import { defineConfig } from 'vitest/config'
+import path from 'node:path/posix'
 
 const config = defineConfig({
   test: {
@@ -16,6 +16,6 @@ const config = defineConfig({
       '@/': path.join(__dirname, './src/'),
     },
   },
-});
+})
 
-export default config;
+export default config

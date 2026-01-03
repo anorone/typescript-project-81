@@ -11,6 +11,6 @@ const config = {
   bracketSpacing: true,
   arrowParens: 'always',
   endOfLine: 'lf',
-};
+}
 
-export default config;
+export default config

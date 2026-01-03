@@ -1,4 +1,4 @@
-import { Dictionary } from '../../types';
+import { Dictionary } from '../../types'
 
 type TagChildren = Tag | Tag[] | string;
 
@@ -17,7 +17,7 @@ const singleTagNames = [
   'source',
   'track',
   'wbr',
-];
+]
 
 class Tag {
   constructor(
@@ -27,26 +27,26 @@ class Tag {
   ) {}
 
   public getName(): string {
-    const { name } = this;
-    return name;
+    const { name } = this
+    return name
   }
 
   public getAttributes(): Dictionary {
-    const { attributes } = this;
-    return attributes;
+    const { attributes } = this
+    return attributes
   }
 
   public getChildren(): TagChildren {
-    const { children } = this;
-    return children;
+    const { children } = this
+    return children
   }
 
   public isSingle(): boolean {
-    const result = singleTagNames.includes(this.name);
-    return result;
+    const result = singleTagNames.includes(this.name)
+    return result
   }
 }
 
-export default Tag;
+export default Tag
 
-export type { TagChildren };
+export type { TagChildren }

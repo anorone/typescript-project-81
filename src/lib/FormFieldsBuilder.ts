@@ -1,9 +1,9 @@
-import { FormTemplate, FormFieldAttributes, Dictionary } from '../../types';
-import { capitalize } from '../../utils';
-import Tag from './Tag';
+import { FormTemplate, FormFieldAttributes, Dictionary } from '../../types'
+import { capitalize } from '../../utils'
+import Tag from './Tag'
 
 const getLabelTag = (value: string, attributes: Dictionary): Tag =>
-  new Tag('label', { ...attributes }, value);
+  new Tag('label', { ...attributes }, value)
 
 const getInputTag = ({ name, value, ...attributes }: Dictionary): Tag =>
   new Tag('input', {
@@ -11,7 +11,7 @@ const getInputTag = ({ name, value, ...attributes }: Dictionary): Tag =>
     type: 'text',
     value,
     ...attributes,
-  });
+  })
 
 const getTextareaTag = ({ name, value, ...attributes }: Dictionary): Tag =>
   new Tag(
@@ -23,12 +23,12 @@ const getTextareaTag = ({ name, value, ...attributes }: Dictionary): Tag =>
       ...attributes,
     },
     value.toString()
-  );
+  )
 
 const tags = {
   input: getInputTag,
   textarea: getTextareaTag,
-};
+}
 
 class FormFieldsBuilder<T extends FormTemplate> {
   constructor(
@@ -37,13 +37,13 @@ class FormFieldsBuilder<T extends FormTemplate> {
   ) {}
 
   public getState() {
-    const state = [...this.state];
-    return state;
+    const state = [...this.state]
+    return state
   }
 
   public input(name: keyof T & string, attributes: FormFieldAttributes = {}): void {
     if (!Object.keys(this.template).includes(name)) {
-      throw new Error("Field 'age' does not exist in the template.");
+      throw new Error('Field \'age\' does not exist in the template.')
     }
     const {
       as = 'input',
@@ -51,26 +51,26 @@ class FormFieldsBuilder<T extends FormTemplate> {
       label,
       labelHtml,
       ...restAttributes
-    }: FormFieldAttributes = attributes;
+    }: FormFieldAttributes = attributes
     const textField = tags[as]({
       name,
       value,
       ...restAttributes,
-    });
+    })
     const labelTag = getLabelTag(label ?? capitalize(name), {
       for: name,
       ...labelHtml,
-    });
-    this.state = [...this.state, labelTag, textField];
+    })
+    this.state = [...this.state, labelTag, textField]
   }
 
   public submit(value = 'Save'): void {
     const inputTag = new Tag('input', {
       type: 'submit',
       value,
-    });
-    this.state = [...this.state, inputTag];
+    })
+    this.state = [...this.state, inputTag]
   }
 }
 
-export default FormFieldsBuilder;
+export default FormFieldsBuilder

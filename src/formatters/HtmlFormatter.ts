@@ -1,5 +1,5 @@
-import { Dictionary } from '../../types';
-import { Tag, TagChildren } from '../lib';
+import { Dictionary } from '../../types'
+import { Tag, TagChildren } from '../lib'
 
 class HtmlFormatter {
   private formatAttributes(attributes: Dictionary): string {
@@ -7,8 +7,8 @@ class HtmlFormatter {
       .map(([key, value]) =>
         value === true ? ` ${key}` : ` ${key}="${value.toString()}"`
       )
-      .join('');
-    return result;
+      .join('')
+    return result
   }
 
   private formatChildren(children: TagChildren): string {
@@ -16,19 +16,19 @@ class HtmlFormatter {
       ? children.map((child) => this.format(child)).join('')
       : typeof children === 'string'
         ? children
-        : this.format(children);
-    return result;
+        : this.format(children)
+    return result
   }
 
   public format(tag: Tag): string {
-    const tagName = tag.getName();
-    const attributes = this.formatAttributes(tag.getAttributes());
+    const tagName = tag.getName()
+    const attributes = this.formatAttributes(tag.getAttributes())
     if (tag.isSingle()) {
-      return `<${tagName}${attributes}>`;
+      return `<${tagName}${attributes}>`
     }
-    const children = this.formatChildren(tag.getChildren());
-    return `<${tagName}${attributes}>${children}</${tagName}>`;
+    const children = this.formatChildren(tag.getChildren())
+    return `<${tagName}${attributes}>${children}</${tagName}>`
   }
 }
 
-export default HtmlFormatter;
+export default HtmlFormatter

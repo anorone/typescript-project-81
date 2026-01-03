@@ -1,12 +1,12 @@
-import { FormTemplate, FormAttributes, FormGeneratorConfig } from '../types';
-import getFormatter from './formatters';
-import { Tag, FormFieldsBuilder } from './lib';
+import { FormTemplate, FormAttributes, FormGeneratorConfig } from '../types'
+import getFormatter from './formatters'
+import { Tag, FormFieldsBuilder } from './lib'
 
 class FormGenerator<T extends FormTemplate> {
-  private builder: FormFieldsBuilder<T>;
+  private builder: FormFieldsBuilder<T>
 
   constructor(template: T) {
-    this.builder = new FormFieldsBuilder(template);
+    this.builder = new FormFieldsBuilder(template)
   }
 
   private static getFormTag<T extends FormTemplate>(
@@ -14,15 +14,15 @@ class FormGenerator<T extends FormTemplate> {
     attributes: FormAttributes,
     buildFormFields: (builder: FormFieldsBuilder<T>) => void
   ): Tag {
-    const { url = '#', method = 'post', ...restAttributes } = attributes;
-    const { builder } = new FormGenerator(template);
-    buildFormFields(builder);
+    const { url = '#', method = 'post', ...restAttributes } = attributes
+    const { builder } = new FormGenerator(template)
+    buildFormFields(builder)
     const formTag = new Tag(
       'form',
       { method, action: url, ...restAttributes },
       builder.getState()
-    );
-    return formTag;
+    )
+    return formTag
   }
 
   public static formFor<T extends FormTemplate>(
@@ -31,12 +31,12 @@ class FormGenerator<T extends FormTemplate> {
     buildFormFields: (builder: FormFieldsBuilder<T>) => void,
     config: FormGeneratorConfig = {}
   ): string {
-    const { format = 'html' } = config;
-    const formatter = getFormatter(format);
-    const formTag = FormGenerator.getFormTag(template, attributes, buildFormFields);
-    const formHtml = formatter.format(formTag);
-    return formHtml;
+    const { format = 'html' } = config
+    const formatter = getFormatter(format)
+    const formTag = FormGenerator.getFormTag(template, attributes, buildFormFields)
+    const formHtml = formatter.format(formTag)
+    return formHtml
   }
 }
 
-export default FormGenerator;
+export default FormGenerator

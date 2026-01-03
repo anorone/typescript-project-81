@@ -1,8 +1,8 @@
-import globals from 'globals';
-import { globalIgnores } from 'eslint/config';
-import pluginJs from '@eslint/js';
-import tseslint from 'typescript-eslint';
-import eslintConfigPrettier from 'eslint-config-prettier/flat';
+import globals from 'globals'
+import { globalIgnores } from 'eslint/config'
+import pluginJs from '@eslint/js'
+import tseslint from 'typescript-eslint'
+import eslintConfigPrettier from 'eslint-config-prettier/flat'
 
 export default tseslint.config([
   globalIgnores(['dist/', 'coverage/']),
@@ -31,4 +31,10 @@ export default tseslint.config([
   tseslint.configs.strictTypeChecked,
   tseslint.configs.stylisticTypeChecked,
   eslintConfigPrettier,
-]);
+  {
+    rules: {
+      semi: ['error', 'never'],
+      quotes: ['error', 'single'],
+    },
+  },
+])

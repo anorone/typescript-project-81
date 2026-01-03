@@ -1,3 +1,3 @@
-import FormGenerator from './src/FormGenerator';
+import FormGenerator from './src/FormGenerator'
 
-export default FormGenerator;
+export default FormGenerator
